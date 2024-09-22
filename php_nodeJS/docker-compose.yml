@@ -1,0 +1,57 @@
+services:
+  db:
+    image: mariadb
+    container_name: mariadb_ts
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=php_nodeJS_ts
+      - MYSQL_USER=alex
+      - MYSQL_PASSWORD=@ZeRtY123
+    networks:
+      - mariadb-php
+      - mariadb-phpmyadmin
+    
+  nginx:
+    build: 
+      context: .
+      dockerfile: nginx.Dockerfile
+    ports:
+      - "80:80"
+    networks:
+      - nginx-php
+    depends_on:
+      - php
+    volumes:
+      - ./public:/var/www/html/public
+
+  php:
+    build: 
+      context: .
+      dockerfile: php.Dockerfile
+    ports:
+      - "9000:9000"
+    networks:
+      - nginx-php
+      - mariadb-php
+    depends_on:
+      - db
+    volumes:
+      - ./public:/var/www/html/public
+
+  phpmyadmin:
+    image: phpmyadmin:apache
+    container_name: phpmyadmin_php_nodeJS
+    ports:
+      - "8080:80"
+    networks:
+      - mariadb-phpmyadmin
+    depends_on:
+      - db
+
+networks:
+  mariadb-php:
+    driver: bridge
+  mariadb-phpmyadmin:
+    driver: bridge
+  nginx-php:
+    driver: bridge
