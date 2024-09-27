@@ -107,7 +107,7 @@
 }
 
 /*
-! tailwindcss v3.4.12 | MIT License | https://tailwindcss.com
+! tailwindcss v3.4.13 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -671,6 +671,20 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.bg-gradient-to-r {
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+}
+
+.from-violet-500 {
+  --tw-gradient-from: #8b5cf6 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(139 92 246 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.to-fuchsia-500 {
+  --tw-gradient-to: #d946ef var(--tw-gradient-to-position);
+}
+
 .p-2 {
   padding: 0.5rem;
 }
@@ -772,5 +786,27 @@ main {
     .\32xl\:container {
       max-width: 1536px;
     }
+  }
+}
+
+.hover\:from-fuchsia-500:hover {
+  --tw-gradient-from: #d946ef var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(217 70 239 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.hover\:to-violet-500:hover {
+  --tw-gradient-to: #8b5cf6 var(--tw-gradient-to-position);
+}
+
+@media (min-width: 768px) {
+  .md\:from-cyan-500 {
+    --tw-gradient-from: #06b6d4 var(--tw-gradient-from-position);
+    --tw-gradient-to: rgb(6 182 212 / 0) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  }
+
+  .md\:to-blue-500 {
+    --tw-gradient-to: #3b82f6 var(--tw-gradient-to-position);
   }
 }

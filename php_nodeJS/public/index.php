@@ -11,8 +11,8 @@
 
 <body>
 
-    <header class="bg-blue-500">
-        <p>header en bleu</p>
+    <header class="bg-gradient-to-r from-violet-500 to-fuchsia-500 hover:from-fuchsia-500 hover:to-violet-500 md:from-cyan-500 md:to-blue-500">
+        <p>header en dégrader violet rose</p>
     </header>
 
     <main class="bg-red-500">

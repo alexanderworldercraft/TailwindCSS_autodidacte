@@ -1,0 +1,16 @@
+{
+  "name": "ts_sans-framework",
+  "version": "1.0.0",
+  "description": "## Prérequis",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:css": "npx tailwindcss -i ./src/style.css -o ./public/output.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "tailwindcss": "^3.4.13"
+  }
+}
