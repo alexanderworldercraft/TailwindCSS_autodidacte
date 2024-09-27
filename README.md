@@ -9,35 +9,30 @@
 - [**🌟 Introduction**](#introduction)
   - [Qu'est-ce que TailwindCSS ?](#quest-ce-que-tailwindcss)
   - [Points forts de TailwindCSS](#points-forts-de-tailwindcss)
-    - Flexibilité
-    - Gain de temps
-    - Personnalisable
   - [Extension VScode](#extension-vscode)
-- [**🚀 Initialisation d'un projet viteJS avec TailwindCSS**](#initialisation-dun-projet-vitejs-avec-tailwindcss)
-  - [Prérequis](#prérequis)
-  - [Création du projet](#création-du-projet)
-    - Créer un projet avec viteJS
-    - Installer TailwindCSS avec le Framework viteJS
-    - Configurez les chemins d'accès à vos modèles
-    - Supprimer ce que l'on n'a pas besoin dans le projet
-    - Ajoutez les directives Tailwind à votre CSS
-    - Ajouter le `link:css` dans l'`index.html`
-    - Démarrer le processus de build
-    - utiliser les classe de tailwindCSS pour designer la page web
-  - [Structure du projet](#structure-du-projet)
-  - [Lancement du serveur de développement](#lancement-du-serveur-de-développement)
+  
+- [**👾 Initialisation d'un projet basique avec TailwindCSS**](/TS_sans_framework/readme.md)
+  - [Prérequis](/TS_sans_framework/readme.md#prérequis)
+  - [Création du projet](/TS_sans_framework/readme.md#création-du-projet)
+  - [Structure du projet](/TS_sans_framework/readme.md#structure-du-projet)
+  - [mettre à jour le fichier CSS de TailwindCSS](/TS_sans_framework/readme.md#mettre-à-jour-le-fichier-css-de-tailwindcss)
 
-- [**🚀 Initialisation d'un projet PHP/nodeJS avec TailwindCSS pour Docker**]()
-  - [Prérequis](#prérequis-1)
-  - [Création du projet](#création-du-projet-1)
-  - [Structure du projet](#structure-du-projet-1)
-  - [Lancement du serveur de développement](#lancement-du-serveur-de-développement-1)
+- [**🚅 Initialisation d'un projet viteJS avec TailwindCSS**](/viteJS/readme.md)
+  - [Prérequis](/viteJS/readme.md#prérequis)
+  - [Création du projet](/viteJS/readme.md#création-du-projet)
+  - [Structure du projet](/viteJS/readme.md#structure-du-projet)
+  - [Lancement du serveur de développement](/viteJS/readme.md#lancement-du-serveur-de-développement)
+
+- [**📦 Initialisation d'un projet PHP/nodeJS avec TailwindCSS pour Docker**](/php_nodeJS/readme.md)
+  - [Prérequis](/php_nodeJS/readme.md#prérequis)
+  - [Création du projet](/php_nodeJS/readme.md#création-du-projet)
+  - [Lancement du serveur de développement](/php_nodeJS/readme.md#lancement-du-serveur-de-développement)
+  - [mettre à jour le fichier CSS de TailwindCSS](/php_nodeJS/readme.md#mettre-à-jour-le-fichier-css-de-tailwindcss)
+
 - [**🏁 Conclusion**](#conclusion)
 - [**🥇 Contribution**](#contribution)
   - [Contribueur](#contribueur)
 - [**Licence**](#licence)
-
----
 
 ## Introduction
 
@@ -64,131 +59,6 @@ C'est particulièrement apprécié pour des projets où tu veux un contrôle pr�
 ### Extension VScode
 
 Dans visuel studio code l'extension [`Tailwind CSS IntelliSense`](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) améliore l'expérience de développement de Tailwind en offrant aux utilisateurs de Visual Studio Code des fonctionnalités avancées telles que l'autocomplétion, la coloration syntaxique et le linting.
-
----
-
-## Initialisation d'un projet viteJS avec TailwindCSS
-
-### Prérequis
-
-- **Installer** [`nodeJS`](https://nodejs.org/fr/download/package-manager) (version 18+ ou 20+) sur sont ordinateur.
-
-- Utiliser [`vite.JS`](https://vitejs.dev/guide/#scaffolding-your-first-vite-project) dans cette exemple.
-
-- Avoir un terminal.
-
-- avoir un dossier de travail :p
-
-### Création du projet
-
-1. **Créer un projet avec viteJS** : Dans le terminal déplacer vous dans votre dossier de travail et executé la commande
-```bash
-npm create vite@latest
-```
-Il vous demandera le `nom du projet`, le `nom du package`, le `framework` et sa `variante`. Pour cet exemple, nous allons nommer le projet et le package `TailwindCSS_viteJS`. Nous n'allons pas prendre de framework et choisir `Vanilla` avec sa variante `TypeScript`.
-
-Cela va alors créer un dossier avec le nom du projet, ici `TailwindCSS_viteJS`, et créer tous les éléments de ViteJS pour son bon fonctionnement.
-
----
-2. **Installer TailwindCSS avec le Framework viteJS** dans sont dossier de projet et l'initialiser avec les commande suivante :
-```bash
-npm install -D tailwindcss postcss autoprefixer
-npx tailwindcss init -p
-```
----
-3. **Configurez les chemins d'accès à vos modèles**
-Ajoutez les chemins d'accès à tous vos fichiers modèles dans votre fichier `tailwind.config.js`.
-
-```js
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: ["./src/**/*.{html,js}"],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-}
-```
----
-4. **Supprimer ce que l'on n'a pas besoin dans le projet**
-
-- Dans le dossier `/src/`, nous allons supprimer les fichiers `counter.ts` et `main.js`.
-
-- Supprimer ces deux ligne `<div id="app"></div>` et `<script type="module" src="/src/main.ts"></script>` dans l'`index.html` car nous n'on auront pas besoin.
-
-- Supprimer le contenu du fichier `style.css`.
----
-5. **Ajoutez les directives Tailwind à votre CSS**
-Ajoutez les directives @tailwind pour chacune des couches de Tailwind à votre fichier `./src/style.css`.
-
-```css
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-```
----
-6. **Ajouter le `link:css` dans l'`index.html`**
-qui devrait resembler à cela.
-
-```html
-<link rel="stylesheet" href="src/style.css">
-```
----
-7. **Démarrer le processus de build**
-
-Lancez votre processus de build dans le terminal avec la commande
-
-```bash
-npm run dev
-```
----
-8. **utiliser les classe de tailwindCSS pour designer la page web**
-
-```html
-<div class="bg-red-950 p-10 text-cyan-300 text-center font-bold">salut</div>
-```
-
-Se code doit vous afficher le texte `salut` au centre de l'élément `<div>` avec comme couleur du cyan sur du rouge foncé.
-
-### Structure du projet
-
-Voici à quoi ressemble la structure de votre projet après son initialisation avec Vite :
-
-```
-TailwindCSS_viteJS/
-  ├── node_modules/           # Dépendances du projet
-  ├── public/                 # Fichiers publics (favicon, index.html)
-  ├── src/                    # Code source de l'application
-  │   ├── style.css           # Styles du composant App
-  │   ├── counter.ts          # Composant principal
-  │   ├── main.js             # Point d'entrée de l'application
-  │   └── ...
-  ├── index.html              # Point d’entrée HTML
-  └── package.json            # Informations sur le projet
-```
-
-Et voici à quoi ressemble la structure de votre projet après l'ajout de tailwindcss et des modification que l'on a effectuer :
-
-```
-TailwindCSS_viteJS/
-  ├── node_modules/           # Dépendances du projet
-  ├── public/                 # Fichiers publics (favicon, index.html)
-  ├── src/                    # Code source de l'application
-  │   ├── style.css           # Styles du composant App
-  │   └── ...
-  ├── index.html              # Point d’entrée HTML
-  ├── tailwind.config         # Informations sur tailwindCSS
-  ├── package.json            # Informations sur le projet
-  └── ...
-```
-
-### Lancement du serveur de développement
-Utiliser la command suivante dans le terminal en étant préalablement déplacer dans le dossier du projet ici `TailwindCSS_viteJS` :
-```bash
-npm run dev
-```
----
-
 
 ---
 

@@ -1,6 +1,20 @@
-## Initialisation d'un projet PHP_nodeJS avec TailwindCSS
+# Docker avec TailwindCSS
 
-### Prérequis
+![Docker](../asset/img/Docker_logo.webp)
+
+*Image illustrant Docker.*
+
+## Sommaire :
+
+- [**📦 Initialisation d'un projet PHP/nodeJS avec TailwindCSS pour Docker**](#)
+  - [Prérequis](#prérequis)
+  - [Création du projet](#création-du-projet)
+  - [Lancement du serveur de développement](#lancement-du-serveur-de-développement)
+  - [mettre à jour le fichier CSS de TailwindCSS](#mettre-à-jour-le-fichier-css-de-tailwindcss)
+
+- [**🏁 Conclusion**](#conclusion)
+
+## Prérequis
 
 - **Installer** [`nodeJS`](https://nodejs.org/fr/download/package-manager) (version 18+ ou 20+) sur sont ordinateur.
 
@@ -12,7 +26,7 @@
 
 - avoir un dossier de travail :p
 
-### Création du projet
+## Création du projet
 
 Pour créer le projet, il faudra créer quelque fichiers et dossiers dans vôtre dossier de travail.
 
@@ -61,7 +75,7 @@ Racine_du_projet/
   └── nginx.Dockerfile        # Dockerfile du conteneur nginX
 ```
 
-1. nginx.Dockerfile
+### **1. nginx.Dockerfile**
 ```Dockerfile
 # nginx.Dockerfile
 FROM nginx:stable-alpine
@@ -72,7 +86,7 @@ COPY conf/default.conf /etc/nginx/conf.d/default.conf
 EXPOSE 80
 ```
 
-2. php.Dockerfile
+### **2. php.Dockerfile**
 ```Dockerfile
 # php.Dockerfile
 FROM php:8.3.11-fpm-alpine
@@ -97,7 +111,7 @@ EXPOSE 9000
 CMD ["php-fpm"]
 ```
 
-3. docker-compose.yml
+### **3. docker-compose.yml**
 ```yml
 services:
   db:
@@ -181,7 +195,7 @@ Racine_du_projet/
       └── index.php           # l'index soit page d'accueil de l'App 
 ```
 
-1. style.css
+### **4. style.css**
 ```css
 @tailwind base;
 @tailwind components;
@@ -194,18 +208,22 @@ body {display: flex;flex-direction: column;}
 main {flex-grow: 1;}
 ```
 
-### Structure du projet
-
-### Lancement du serveur de développement
+## Lancement du serveur de développement
 
 ```bash
 docker compose up --build
 ```
 
-### mettre à jour le fichier CSS de TailwindCSS
+## mettre à jour le fichier CSS de TailwindCSS
 
 ```bash
 npm run build:css
 ```
 
-## Conclusion
+# Conclusion
+
+L'utilisation de Docker complique la tâche, mais cela apporte une plus-value non négligeable à un projet web.
+
+---
+
+# [**🔙 Retour**](/README.md)

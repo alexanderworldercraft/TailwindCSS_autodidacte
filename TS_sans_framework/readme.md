@@ -1,4 +1,20 @@
-# Initialisation sans framework avec TailwindCSS
+# TailwindCSS sans Framework
+
+![tailwindcss](../asset/img/tailwindcss.webp)
+
+*Image illustrant tailwindcss.*
+
+## Sommaire :
+
+- [**👾 Initialisation d'un projet basique avec TailwindCSS**](#)
+  - [Prérequis](#prérequis)
+  - [Création du projet](#création-du-projet)
+  - [Structure du projet](#structure-du-projet)
+  - [mettre à jour le fichier CSS de TailwindCSS](#mettre-à-jour-le-fichier-css-de-tailwindcss)
+
+- [**🏁 Conclusion**](#conclusion)
+
+- [**🔙 Retour**](/README.md)
 
 ## Prérequis
 
@@ -33,7 +49,7 @@ npx tailwindcss init
 ```
 Cela créera un fichier `tailwind.config.js` que tu peux personnaliser selon tes besoins.
 
-```json
+```js
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{html,js}","./public/**/*.{html,js}"],
@@ -132,3 +148,11 @@ npm run build:css
 ```
 
 # Conclusion
+
+Cela est plus facile à utiliser qu'il n'y paraît, car une fois fait, on se rend compte que ce n'est pas sorcier.
+
+De plus, l'optimisation du fichier CSS qui en résulte est très intéressante pour limiter le poids du fichier.
+
+---
+
+# [**🔙 Retour**](/README.md)
